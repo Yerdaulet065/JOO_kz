@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}JooEdu{% endblock %}
+
+{% block content %}
+    <div class="account_container">
+        <div class="background_image_blur_block" style="background-image: url('{% static 'main/img/banner.png' %}')"></div>
+        <div class="account_side_block">
+            <div class="logo_account_side_block">
+                <img src="https://edu.joo.kz/assets/img/auth-logo.svg" alt="">
+            </div>
+            <div class="title_account_side_block">
+                <h1>Кіру</h1>
+            </div>
+            <form method="POST" class="form_account_side_block">
+                {% csrf_token %}
+                <label for="username">
+                    <input type="text" name="username" placeholder="Қолданушы аты" class="form-control" required>
+                </label>
+                <label for="password">
+                    <input type="password" name="password" placeholder="Құпия сөз" class="form-control" required>
+                </label>
+                {% for message in messages %}
+                    <p class="error_message_account_side_block">{{ message }}</p>
+                {% endfor %}
+                <button type="submit" class="btn btn-dark">КІРУ</button>
+            </form>
+            <div class="forgot_password_account_side_block">
+                <a href="">Құпия сөзді ұмыттыңыз ба?</a>
+            </div>
+            <div class="register_account_side_block">
+                <a href="{% url 'register' %}">Тіркелу</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

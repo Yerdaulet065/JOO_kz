@@ -1,0 +1,48 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+            <div class="header_container">
+                <div class="logo_block_header_container">
+                    <img src="https://static.tildacdn.com/tild3531-6464-4635-b565-633966336438/joo_logo_orange.svg" alt="">
+                </div>
+                <div class="account_block_header_container">
+                    <div class="language_block_account_header">
+                        <a href="">Русский</a>
+                    </div>
+                    <div class="language_block_account_header">
+                        <a href="">My profil</a>
+                    </div>
+                    <div class="login_block_account_header">
+                        {% if user.is_authenticated %}
+                            <a href="#">{{ user.username }}</a>
+                        {% else %}
+                            <a href="{% url 'login' %}">Кіру</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="path-to-the-file/splide.min.js"></script>
+</body>
+</html>

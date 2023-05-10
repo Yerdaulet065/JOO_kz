@@ -1,0 +1,329 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Joo.kz - Мамандықтар, Университтет, Гранттар, ҰБТ{% endblock %}
+
+{% block content %}
+    <div class="section_container">
+        <div class="main_section_review_container">
+            <div class="title_main_section_review_block">
+                <h1>Біз туралы түлектеріміз айтсын</h1>
+            </div>
+            <div class="additional_main_section_review_block">
+                <p>PlayMarket пен AppStore желісіндегі жүрекжарды пікірлер</p>
+            </div>
+            <a href="{% url 'create' %}" class="create_review">Пікір қалдыру</a>
+            <div class="main_reviews_block_section_container">
+                <div class="prev_review_button">
+                    <i>
+                        <svg class="" width="32" height="32" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; transform: rotate(180deg);">
+                            <path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 2px; stroke: rgb(255, 97, 63);"></path>
+                        </svg>
+                    </i>
+                </div>
+                <div class="core_review_block_main">
+                    {% for review in reviews %}
+                        <div class="review_block_main">
+                            <div class="rating_block_main_review">
+                                <i class="menu_icon_more">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                                    </svg>
+                                </i>
+                                {% if review.rating == 5 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif review.rating == 4 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif review.rating == 3 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif review.rating == 2 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% else %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fa5e37" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% endif %}
+                            </div>
+                            <div class="menu_open_more_info_block_container">
+                                <div class="update_menu_open">
+                                    <a href="{% url 'update' review.id %}">Обновить</a>
+                                </div>
+                                <form action="{% url 'delete' review.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" value="{{ review.id }}" name="review_id">Удалить</button>
+                                </form>
+                            </div>
+                            <div class="author_date_block_main_review">
+                                <p>{{ review.author.username }}, {{ review.date }}</p>
+                            </div>
+                            <div class="title_block_main_review">
+                                <h1>{{ review.title }}</h1>
+                            </div>
+                            <div class="description_block_main_review">
+                                <p>{{ review.description }}</p>
+                            </div>
+                            {% if review.img %}
+                            <div class="description_block_main_review">
+                                <img src="{{ review.img.url }}" alt="Image" width="100%">
+                            </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="next_review_button">
+                    <i>
+                        <svg class="" width="32" height="32" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                            <path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 2px; stroke: rgb(255, 97, 63);"></path>
+                        </svg>
+                    </i>
+                </div>
+            </div>
+
+            <div class="our_review_rating_container">
+                <div class="core_info_block_our_review_rating">
+                    <div class="title_core_info_block">
+                        <h1>Талапкерлер үшін ең керемет бағдарлама</h1>
+                    </div>
+                    <div class="download_technology_product_block">
+                        <div class="download_with_apple_block">
+                            <img src="https://static.tildacdn.com/tild3138-3131-4233-a431-393661303234/logo-appstore-ru.svg" alt="">
+                        </div>
+                        <div class="download_with_android_block">
+                            <img src="https://static.tildacdn.com/tild3766-3165-4665-b764-303931313432/logo-googleplay-ru.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="core_rating_block_our_review">
+                    <div class="main_info_core_rating_block">
+                        <div class="main_rating_main_info_core_rating">
+                            <h1>{{ rating }}</h1>
+                        </div>
+                        <div class="different_rating_main_info_core_rating">
+                            <div class="rating_stars_different_rating">
+                                {% if rating >= 5 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif rating >= 4 and rating < 5 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif rating >= 3 and rating < 4 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif rating >= 2 and rating < 3 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% elif rating < 2 %}
+                                    <i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fdec00" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                                        </svg>
+                                    </i>
+                                {% endif %}
+                            </div>
+                            <div class="count_of_reviews_different_info">
+                                <p>{{ count_of_reviews }} пікір</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="range_value_rating_info_block">
+                        <div class="range_value_rating">
+                            <div class="first_range_rating_value"></div>
+                        </div>
+                        <div class="range_value_rating">
+                            <div class="second_range_rating_value"></div>
+                        </div>
+                        <div class="range_value_rating">
+                            <div class="third_range_rating_value"></div>
+                        </div>
+                        <div class="range_value_rating">
+                            <div class="fourth_range_rating_value"></div>
+                        </div>
+                        <div class="range_value_rating">
+                            <div class="fifth_range_rating_value"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const prevButton = document.querySelector('.prev_review_button');
+        const nextButton = document.querySelector('.next_review_button');
+        const coreBlock = document.querySelector('.core_review_block_main');
+        const reviewBlocks = document.querySelectorAll('.review_block_main');
+
+        // Set the initial index to 0
+        let index = 0;
+
+        // Show the first three review blocks
+        for (let i = 0; i < reviewBlocks.length; i++) {
+          if (i < 3) {
+            reviewBlocks[i].style.display = 'block';
+          } else {
+            reviewBlocks[i].style.display = 'none';
+          }
+        }
+
+        // Add click event listeners to the prevButton and nextButton
+        prevButton.addEventListener('click', showPreviousReview);
+        nextButton.addEventListener('click', showNextReview);
+
+        // Function to show the previous review block
+        function showPreviousReview() {
+          // Hide the current review block
+          reviewBlocks[index].style.display = 'none';
+
+          // Update the index to show the previous review block
+          index--;
+
+          // If the index is negative, set it to the last index
+          if (index < 0) {
+            index = reviewBlocks.length - 1;
+          }
+
+          // Show the previous review block and its adjacent blocks
+          if (index === 0) {
+            reviewBlocks[index].style.display = 'block';
+            reviewBlocks[reviewBlocks.length - 1].style.display = 'none';
+            reviewBlocks[index + 1].style.display = 'block';
+          } else {
+            reviewBlocks[index].style.display = 'block';
+            reviewBlocks[index - 1].style.display = 'block';
+            reviewBlocks[index + 1].style.display = 'none';
+          }
+        }
+
+        // Function to show the next review block
+        function showNextReview() {
+          // Hide the current review block
+          reviewBlocks[index].style.display = 'none';
+
+          // Update the index to show the next review block
+          index++;
+
+          // If the index is greater than the last index, set it to 0
+          if (index >= reviewBlocks.length) {
+            index = 0;
+          }
+
+          // Show the next review block and its adjacent blocks
+          if (index === reviewBlocks.length - 1) {
+            reviewBlocks[index].style.display = 'block';
+            reviewBlocks[index - 1].style.display = 'none';
+            reviewBlocks[0].style.display = 'block';
+          } else {
+            reviewBlocks[index].style.display = 'block';
+            reviewBlocks[index - 1].style.display = 'none';
+            reviewBlocks[index + 1].style.display = 'block';
+          }
+        }
+    </script>
+
+    <script>
+        let clickButton = document.querySelectorAll('.menu_icon_more');
+        let openButton = document.querySelectorAll('.menu_open_more_info_block_container');
+
+        for (let i = 0; i < clickButton.length; i++) {
+            clickButton[i].addEventListener('click', () => {
+                if (openButton[i].style.display === 'none') {
+                    openButton[i].style.display = 'block';
+                }
+                else {
+                    openButton[i].style.display = 'none';
+                }
+            });
+        }
+    </script>
+{% endblock %}

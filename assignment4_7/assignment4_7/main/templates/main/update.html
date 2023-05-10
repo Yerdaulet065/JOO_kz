@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Пікірді өзгерту{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="form_create_data_review">
+            <form method="POST" class="form_create_review" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1>Joo.kz туралы пікіріңізді өзгертіңіз</h1>
+                <label for="title">
+                    <input type="text" name="title" placeholder="Кіріспе" class="form-control" value="{{ review.title }}">
+                </label>
+                <label for="rating">
+                    <input type="number" name="rating" placeholder="Баға" class="form-control" max="5" value="{{ review.rating }}">
+                </label>
+                <label for="description">
+                    <textarea name="description" cols="50" rows="10" placeholder="Басты пікір" class="form-control">{{ review.description }}</textarea>
+                </label>
+                <label for="image">
+                    <input type="file" name="image" class="form-control" max="5">
+                </label>
+                <button class="btn btn-success" type="submit">САҚТАУ</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

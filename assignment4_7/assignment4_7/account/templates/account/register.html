@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}JooEdu{% endblock %}
+
+{% block content %}
+    <div class="account_container">
+        <div class="background_image_blur_block account_register_container" style="background-image: url('{% static 'main/img/banner.png' %}')"></div>
+        <div class="account_side_block">
+            <div class="logo_account_side_block">
+                <img src="https://edu.joo.kz/assets/img/auth-logo.svg" alt="">
+            </div>
+            <div class="title_account_side_block">
+                <h1>Тіркелу</h1>
+            </div>
+            <form method="POST" class="form_account_side_block">
+                {% csrf_token %}
+                <label for="first_name">
+                    <input type="text" name="first_name" placeholder="Есімі" class="form-control" required>
+                </label>
+                <label for="last_name">
+                    <input type="text" name="last_name" placeholder="Тегі" class="form-control" required>
+                </label>
+                <label for="username">
+                    <input type="text" name="username" placeholder="Қолданушы аты" class="form-control" required>
+                </label>
+                <label for="email">
+                    <input type="email" name="email" placeholder="Email" class="form-control" required>
+                </label>
+                <label for="password">
+                    <input type="password" name="password" placeholder="Құпия сөз" class="form-control" required>
+                </label>
+                 <label for="password1">
+                    <input type="password" name="password1" placeholder="Құпия сөз" class="form-control" required>
+                </label>
+                {% for message in messages %}
+                    <p class="error_message_account_side_block">{{ message }}</p>
+                {% endfor %}
+                <button type="submit" class="btn btn-dark">ТІРКЕЛГІ ЖАСА</button>
+            </form>
+            <div class="additional_message_account_side_block">
+                <p>«Тіркелгі жасау» батырмасын басу арқылы сіз <a href="#">Пайдаланушы келісімінде</a> көрсетілген шарттармен келісесіз</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
